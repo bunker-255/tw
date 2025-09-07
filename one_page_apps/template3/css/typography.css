@@ -1,0 +1,77 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,300&family=Rubik:wght@500;600;700&family=Alef:wght@400;700&display=swap');
+
+/* Default Typography */
+body {
+  font-family: 'Alef Hebrew', 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.7em;
+  color: #666; /* Default text color from style.css, can be reinforced here */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rubik', sans-serif;
+  color: #333;
+  line-height: 1.4em;
+  margin-bottom: 0.5em; /* Add some space below headings */
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 1em; /* Add space below paragraphs */
+}
+
+/* Links */
+a {
+  color: #2EA3F2;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  /* Hover effect defined in components.css or specific element styles */
+  /* Example: opacity: 0.8; */
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  body, p { /* Increase base text size slightly on mobile */
+    font-size: 16px;
+  }
+  /* Adjust paragraph size if needed, README mentions 16px in specific sections */
+  /* p { font-size: 16px; } */
+}

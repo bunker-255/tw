@@ -1,0 +1,466 @@
+@import url('reset.css');
+@import url('typography.css');
+@import url('layout.css');
+@import url('components.css');
+
+/* Global styles if needed */
+body {
+    direction: rtl; /* Ensure RTL direction */
+    background-color: #FFFFFF; /* Default background */
+    color: #666; /* Default text color */
+    padding-bottom: 0; /* Reset padding, will be added for mobile */
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Hide elements initially for animation */
+[data-animation] {
+    opacity: 0;
+}
+
+/* Hero Section Styles */
+.section-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Default height for desktop */
+    background: url('../20_31_49.png') no-repeat center center/cover; /* Hero section background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF; /* White text color */
+    overflow: hidden; /* Hide overflowing background */
+}
+
+.section-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px; /* Limit content width */
+    padding: 0 20px; /* Add some padding on smaller screens */
+}
+
+.hero-content h1 {
+    font-size: 64px; /* Large font size for company name */
+    font-weight: bold;
+    margin-bottom: 24px; /* Space between title and description */
+}
+
+.hero-content h1 .company-name-part1 {
+    color: #FFFFFF; /* White part of the name */
+}
+
+.hero-content h1 .company-name-part2 {
+    color: #59A6D5; /* Blue part of the name */
+}
+
+.hero-subtitle {
+    display: block; /* Ensure it takes its own line */
+    font-size: 24px; /* Smaller font size than h1 */
+    font-weight: 400; /* Normal weight */
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    margin-top: 10px; /* Space above the subtitle */
+    line-height: 1.4;
+}
+
+
+.hero-description {
+    font-size: 24px; /* Medium size for description */
+    line-height: 1.5; /* Reduced line height */
+    margin-bottom: 40px; /* Space between description and slogan */
+}
+
+.hero-slogan {
+    font-size: 16px; /* Small size for slogan */
+    margin-bottom: 40px; /* Space between slogan and button */
+}
+
+/* Hero Call-to-Action Button - Enhanced Style */
+.hero-cta {
+    display: inline-block; /* Ensure proper block behavior */
+    /* Rich gradient background */
+    background: linear-gradient(180deg, #FFB75E 0%, #FFA736 100%);
+    color: #FFFFFF; /* White text */
+    font-family: 'Alef', sans-serif; /* Match main font */
+    font-size: 18px; /* Readable font size */
+    font-weight: 700; /* Bold text for emphasis */
+    padding: 15px 40px; /* Generous padding for a good click target */
+    border-radius: 50px; /* Fully rounded corners */
+    text-decoration: none; /* Remove underline */
+    border: none; /* No border */
+    /* Subtle shadow for depth */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    /* Smooth transitions for hover/focus/active states */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Indicate interactivity */
+    text-align: center; /* Center text */
+    outline: none; /* Remove default focus outline, handled by :focus style */
+}
+
+/* Hover and Focus states for visual feedback and accessibility */
+.hero-cta:hover,
+.hero-cta:focus {
+    /* Slightly darker gradient */
+    background: linear-gradient(180deg, #FFA736 0%, #E69530 100%);
+    /* Lift effect */
+    transform: translateY(-3px);
+    /* Stronger shadow */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF; /* Ensure text color remains white */
+    outline: none; /* Ensure no default outline interferes */
+}
+
+/* Active state for click feedback */
+.hero-cta:active {
+    transform: translateY(1px); /* Slight press down effect */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Reduced shadow */
+}
+
+/* Responsive styles for Hero Section */
+@media (max-width: 768px) {
+    .section-hero {
+        height: 80vh; /* Smaller height for mobile */
+    }
+
+    .hero-content h1 {
+        font-size: 40px; /* Smaller font size for mobile title */
+    }
+
+    .hero-subtitle {
+        font-size: 18px; /* Smaller font size for mobile subtitle */
+    }
+
+
+    .hero-description {
+        font-size: 20px; /* Smaller font size for mobile description */
+        margin-bottom: 30px; /* Adjust spacing */
+    }
+
+    .hero-slogan {
+        margin-bottom: 30px; /* Adjust spacing */
+    }
+
+    .hero-cta {
+        font-size: 16px; /* Slightly smaller font size for mobile */
+        padding: 12px 30px; /* Adjust padding for mobile */
+        /* Keep other styles like border-radius, shadow, etc. */
+    }
+}
+
+/* ============================================= */
+/*              Stats Section Styles             */
+/* ============================================= */
+
+.section-stats {
+    position: relative; /* Needed for the overlay */
+    padding: 80px 0; /* Vertical padding */
+    background: url('../20_31_49.png') no-repeat center center/cover; /* Reuse hero background */
+    color: #FFFFFF; /* White text */
+    text-align: center;
+    overflow: hidden; /* Prevent potential overflow issues */
+}
+
+.section-stats::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Darker blue overlay than hero, closer to the image */
+    background: linear-gradient(to bottom, rgba(10, 40, 70, 0.8), rgba(10, 40, 70, 0.8));
+    z-index: 1;
+}
+
+.stats-container {
+    position: relative; /* Ensure content is above the overlay */
+    z-index: 2;
+    display: flex;
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px; /* Space between items */
+}
+
+.stat-item {
+    flex: 1; /* Allow items to grow and shrink */
+    min-width: 150px; /* Minimum width before wrapping */
+    /* data-animation handled globally */
+}
+
+.stat-number {
+    display: block;
+    font-size: 72px; /* Large font size for numbers */
+    font-weight: 700; /* Bold numbers */
+    line-height: 1.1;
+    margin-bottom: 10px; /* Space between number and description */
+    font-family: 'Rubik', sans-serif; /* Use Rubik for numbers if available */
+}
+
+.stat-description {
+    font-size: 18px; /* Font size for description */
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.85); /* Slightly transparent white for description */
+}
+
+/* Responsive adjustments for Stats Section */
+@media (max-width: 768px) {
+    .section-stats {
+        padding: 60px 0; /* Reduce padding */
+    }
+
+    .stats-container {
+        flex-direction: column; /* Stack items vertically */
+        gap: 40px; /* Increase gap for vertical layout */
+    }
+
+    .stat-number {
+        font-size: 56px; /* Smaller numbers on mobile */
+    }
+
+    .stat-description {
+        font-size: 16px; /* Smaller description on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .section-stats {
+        padding: 40px 0;
+    }
+
+     .stat-number {
+        font-size: 48px;
+    }
+
+    .stat-description {
+        font-size: 14px;
+    }
+}
+
+/* ============================================= */
+/*          Header Anchor Links Styles           */
+/* ============================================= */
+
+.header-anchor-links {
+    list-style: none; /* Remove default list bullets */
+    padding: 0;
+    margin: 0 40px 0 0; /* Increased margin to separate from phone number (RTL) */
+    display: flex; /* Arrange links horizontally */
+    align-items: center; /* Vertically align items */
+    gap: 20px; /* Space between links */
+}
+
+.header-anchor-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.header-anchor-links a {
+    color: #333; /* Dark color for visibility on white header */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Standard font size */
+    font-weight: 500; /* Medium weight */
+    padding: 5px 0; /* Add some vertical padding */
+    position: relative; /* For potential hover effects */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.header-anchor-links a:hover,
+.header-anchor-links a:focus {
+    color: #FFC107; /* Highlight color on hover/focus */
+    outline: none; /* Remove default focus outline */
+}
+
+/* Responsive adjustments for Header Anchor Links */
+@media (max-width: 768px) {
+    /* .header-anchor-links { */
+        /* display: none; /* Removed: Hiding/showing is handled by .main-nav-content toggle */
+    /* } */
+
+    /* Adjust header container padding if needed when links are hidden */
+    .header-container {
+        /* justify-content is handled in layout.css */
+    }
+}
+
+/* Utility class to prevent body scrolling when mobile menu is open */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* ============================================= */
+/*        Quick Contact Buttons Section          */
+/* ============================================= */
+
+.section-quick-contact {
+    padding: 60px 0; /* Vertical padding */
+    background-color: #f8f9fa; /* Light background color */
+    text-align: center;
+    border-top: 1px solid #e9ecef; /* Subtle top border */
+    border-bottom: 1px solid #e9ecef; /* Subtle bottom border */
+}
+
+.quick-contact-content h2 {
+    font-size: 36px; /* Large heading */
+    font-weight: 700;
+    color: #343a40; /* Dark heading color */
+    margin-bottom: 40px; /* Space below heading */
+    font-family: 'Alef', sans-serif; /* Consistent font */
+}
+
+.quick-contact-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center; /* Align buttons vertically */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px; /* Space between buttons */
+}
+
+/* Base styles for quick contact buttons */
+.btn-quick-contact {
+    display: inline-flex; /* Use flex for icon + text alignment */
+    align-items: center;
+    justify-content: center;
+    padding: 18px 45px; /* Large padding for big buttons */
+    font-size: 20px; /* Larger font size */
+    font-weight: 600;
+    border-radius: 50px; /* Fully rounded */
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    min-width: 280px; /* Minimum width for consistency */
+    text-align: center;
+}
+
+.btn-quick-contact .btn-icon {
+    margin-right: 12px; /* Space between icon and text (RTL) */
+    width: 28px; /* Slightly larger icon */
+    height: 28px;
+}
+
+/* WhatsApp Button Styles */
+.btn-whatsapp {
+    background-color: #25D366; /* WhatsApp green */
+    color: #FFFFFF; /* White text */
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:focus {
+    background-color: #1EAE54; /* Darker WhatsApp green */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); /* Greenish shadow */
+    color: #FFFFFF;
+    outline: none;
+}
+
+.btn-whatsapp:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(37, 211, 102, 0.3);
+}
+
+/* Phone Button Styles */
+.btn-phone {
+    background-color: #007bff; /* Standard blue color */
+    color: #FFFFFF; /* White text */
+}
+
+.btn-phone:hover,
+.btn-phone:focus {
+    background-color: #0056b3; /* Darker blue */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4); /* Bluish shadow */
+    color: #FFFFFF;
+    outline: none;
+}
+
+.btn-phone:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Responsive adjustments for Quick Contact Section */
+@media (max-width: 768px) {
+    .section-quick-contact {
+        padding: 40px 0;
+    }
+
+    .quick-contact-content h2 {
+        font-size: 30px; /* Slightly smaller heading */
+        margin-bottom: 30px;
+    }
+
+    .quick-contact-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 20px; /* Adjust gap for vertical layout */
+    }
+
+    .btn-quick-contact {
+        padding: 15px 40px; /* Adjust padding */
+        font-size: 18px; /* Adjust font size */
+        min-width: 250px; /* Adjust min-width */
+    }
+
+     .btn-quick-contact .btn-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+     .quick-contact-content h2 {
+        font-size: 26px;
+    }
+
+    .btn-quick-contact {
+        padding: 12px 30px;
+        font-size: 16px;
+        min-width: 220px;
+    }
+}
+
+/* Hero Section Button Container */
+.hero-cta-buttons {
+    display: flex; /* Arrange buttons horizontally */
+    justify-content: center; /* Center the buttons */
+    align-items: center; /* Align items vertically */
+    gap: 15px; /* Add space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    margin-top: 20px; /* Add some space above the buttons */
+}
+
+/* Optional: Adjust individual button styles if needed */
+.hero-cta-buttons .btn {
+    margin: 5px 0; /* Adjust margin for wrapping */
+}
+
+/* Style for the WhatsApp button in the hero section */
+.hero-cta.btn-whatsapp {
+    background-color: #25D366; /* WhatsApp green */
+    color: #fff;
+    border: 2px solid #25D366;
+}
+
+.hero-cta.btn-whatsapp:hover {
+    background-color: #1EAE54; /* Darker green on hover */
+    border-color: #1EAE54;
+}
+
+.hero-cta.btn-whatsapp .btn-icon {
+    fill: #fff; /* Ensure icon color is white */
+}

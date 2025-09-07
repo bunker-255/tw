@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Атрибут lang и dir будут устанавливаться через JavaScript -->
+<html lang="ru" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ключ для перевода -->
+    <title data-lang-key="title">Просмотрщик шаблонов</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Боковая панель со списком шаблонов -->
+        <div id="sidebar">
+            <h2 data-lang-key="templates_title">Шаблоны</h2>
+            <ul id="template-list">
+                <!-- Шаблоны будут добавлены сюда с помощью JavaScript -->
+            </ul>
+        </div>
+
+        <!-- Основная область для демонстрации -->
+        <div id="main-content">
+            <!-- Верхняя панель инструментов -->
+            <div class="toolbar">
+                <button id="toggle-sidebar">☰</button>
+                <div class="view-switcher">
+                    <button id="desktop-view" data-lang-key="desktop_view">Десктоп</button>
+                    <button id="mobile-view" data-lang-key="mobile_view">Мобильный</button>
+                </div>
+                <div class="lang-switcher">
+                    <select id="lang-select">
+                        <option value="ru">Русский</option>
+                        <option value="en">English</option>
+                        <option value="he">עברית</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Iframe для загрузки и отображения шаблонов -->
+            <div class="iframe-container">
+                <iframe id="template-frame" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

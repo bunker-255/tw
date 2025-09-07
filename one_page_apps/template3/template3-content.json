@@ -1,0 +1,129 @@
+{
+  "siteInfo": {
+    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+    "images": {
+      "hero": "20_31_49.png",
+      "stats": "20_31_49.png"
+    }
+  },
+  "navigation": {
+    "links": [
+      {"text": "Link 1", "href": "#services"},
+      {"text": "Link 2", "href": "#advantages"},
+      {"text": "Link 3", "href": "#reviews"},
+      {"text": "Link 4", "href": "#contact"}
+    ],
+    "phone": "0504834744"
+  },
+  "heroSection": {
+    "companyName": {
+      "part1": "Company",
+      "part2": "Name"
+    },
+    "subtitle": "Subtitle section for testing purposes",
+    "description": "This is a test description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "buttons": [
+      {"text": "Phone Button", "href": "tel:0504834744", "type": "phone"},
+      {"text": "WhatsApp Button", "href": "https://wa.me/972504834744", "type": "whatsapp"},
+      {"text": "Google Maps Button", "href": "https://maps.app.goo.gl/6PyFSBaU4LhK7j2Q7", "type": "google"}
+    ]
+  },
+  "services": {
+    "title": "Services Title",
+    "items": [
+      {
+        "title": "Service Item 1",
+        "description": "Description for service item 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "title": "Service Item 2",
+        "description": "Description for service item 2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      {
+        "title": "Service Item 3",
+        "description": "Description for service item 3. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+      },
+      {
+        "title": "Service Item 4",
+        "description": "Description for service item 4. Duis aute irure dolor in reprehenderit in voluptate velit esse."
+      }
+    ]
+  },
+  "stats": {
+    "title": "Stats Title",
+    "items": [
+      {"number": "10000", "description": "Stat item 1 description"},
+      {"number": "50", "description": "Stat item 2 description"},
+      {"number": "500", "description": "Stat item 3 description"}
+    ]
+  },
+  "advantages": {
+    "title": "Advantages Title",
+    "items": [
+      {
+        "title": "Advantage 1",
+        "description": "Advantage 1 description. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "title": "Advantage 2",
+        "description": "Advantage 2 description. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      {
+        "title": "Advantage 3",
+        "description": "Advantage 3 description. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+      }
+    ]
+  },
+  "reviews": {
+    "title": "Reviews Title",
+    "items": [
+      {
+        "text": "\"This is a test review. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\"",
+        "author": "- Test Author 1"
+      },
+      {
+        "text": "\"Another test review. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\"",
+        "author": "- Test Author 2"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Title",
+    "buttons": [
+      {"text": "WhatsApp Contact", "href": "https://wa.me/972504834744", "type": "whatsapp"},
+      {"text": "Phone Contact", "href": "tel:972504834744", "type": "phone"},
+      {"text": "Google Maps Contact", "href": "https://maps.app.goo.gl/6PyFSBaU4LhK7j2Q7", "type": "google"}
+    ]
+  },
+  "footer": {
+    "about": {
+      "title": "About Title",
+      "text": "This is test footer text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    "contact": {
+      "title": "Contact Footer",
+      "address": "Israel, Holon",
+      "phone": "0504834744"
+    },
+    "copyright": "© 2025 Test Company. All rights reserved.",
+    "developer": {
+      "text": "Developed by",
+      "link": "https://linkedin.com/in/sbdt",
+      "name": "Illya Lazarev"
+    }
+  },
+  "links": {
+    "phone": "tel:972504834744",
+    "whatsapp": "https://wa.me/972504834744",
+    "googleMaps": "https://maps.app.goo.gl/6PyFSBaU4LhK7j2Q7",
+    "developer": "https://linkedin.com/in/sbdt"
+  },
+  "mobileCallButton": {
+    "text": "Call Now: 0504834744",
+    "href": "tel:0504834744"
+  },
+  "logo": {
+    "text": "Company Name"
+  }
+}
