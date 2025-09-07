@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 he: 'Disonance'
             },
             // Путь к HTML файлу шаблона
-            path: 'one_page_apps/template1/index.html',
+            path: '/one_page_apps/template1/index.html',
             // Путь к изображению для предпросмотра
-            preview: 'one_page_apps/template1/preview.png'
+            preview: '/one_page_apps/template1/preview.png'
         },
         {
             name: {
@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 en: 'SimplePurpleStore1',
                 he: 'SimplePurpleStore1'
             },
-            path: 'one_page_apps/template2/index.html',
-            preview: 'one_page_apps/template2/preview.png'
+            path: '/one_page_apps/template2/index.html',
+            preview: '/one_page_apps/template2/preview.png'
         },
         
         {
@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 en: 'LightCarDeal',
                 he: 'LightCarDeal'
             },
-            path: 'one_page_apps/template3/index.html',
-            preview: 'one_page_apps/template3/preview.png'
+            path: '/one_page_apps/template3/index.html',
+            preview: '/one_page_apps/template3/preview.png'
         },
         
         {
@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 en: 'BlueFactory',
                 he: 'BlueFactory'
             },
-            path: 'one_page_apps/template4/index.html',
-            preview: 'one_page_apps/template4/preview.png'
+            path: '/one_page_apps/template4/index.html',
+            preview: '/one_page_apps/template4/preview.png'
         },
         {
             name: {
@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 en: 'BlueGymClub',
                 he: 'BlueGymClub'
             },
-            path: 'one_page_apps/template5/index.html',
-            preview: 'one_page_apps/template5/preview.png'
+            path: '/one_page_apps/template5/index.html',
+            preview: '/one_page_apps/template5/preview.png'
         }
     ];
 
@@ -166,4 +166,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Устанавливаем десктопный режим по умолчанию
     setViewMode('desktop');
+
 });
