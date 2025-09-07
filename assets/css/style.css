@@ -1,0 +1,440 @@
+/* Общие стили */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Боковая панель */
+#sidebar {
+    width: 260px;
+    min-width: 260px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1001;
+    backdrop-filter: blur(10px);
+}
+
+#sidebar h2 {
+    margin-top: 0;
+    color: #2d3748;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+#template-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#template-list li {
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#template-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-color: #667eea;
+}
+
+#template-list li.active {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+#template-list img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+#template-list li:hover img {
+    transform: scale(1.02);
+}
+
+#template-list span {
+    display: block;
+    padding: 12px;
+    background-color: #f7fafc;
+    text-align: center;
+    font-weight: 500;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+/* Основной контент */
+#main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #e2e8f0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+#toggle-sidebar {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #4a5568;
+    padding: 5px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+#toggle-sidebar:hover {
+    background-color: #f7fafc;
+}
+
+.view-switcher button, .lang-switcher select {
+    padding: 10px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-left: 8px;
+    font-weight: 500;
+    color: #4a5568;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.view-switcher button:hover, .lang-switcher select:hover {
+    border-color: #667eea;
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.15);
+}
+
+/* Стили для кнопок связи */
+.contact-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    color: #4a5568;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    font-size: 14px;
+}
+
+.contact-btn:hover {
+    border-color: #667eea;
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.15);
+    transform: translateY(-1px);
+}
+
+.contact-btn.btn-whatsapp:hover {
+    border-color: #25D366;
+    box-shadow: 0 2px 6px rgba(37, 211, 102, 0.15);
+}
+
+.contact-btn.btn-phone:hover {
+    border-color: #667eea;
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.15);
+}
+
+.contact-btn .btn-icon {
+    flex-shrink: 0;
+}
+
+.contact-btn .btn-text {
+    white-space: nowrap;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .toolbar {
+        padding: 12px 15px;
+    }
+    
+    .contact-buttons {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 4px;
+        z-index: 10;
+    }
+    
+    .contact-btn {
+        padding: 8px;
+        min-width: 40px;
+        justify-content: center;
+    }
+    
+    .contact-btn .btn-text {
+        display: none; /* Скрываем текст на мобильных */
+    }
+    
+    .contact-btn .btn-icon {
+        margin: 0; /* Убираем отступы для иконок */
+    }
+    
+    .view-switcher {
+        display: none;
+    }
+    
+    .lang-switcher {
+        margin-left: auto; /* Прижимаем переключатель языка к правому краю */
+    }
+}
+
+.view-switcher button.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.iframe-container {
+    flex-grow: 1;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: auto;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+}
+
+#template-frame {
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
+}
+
+/* Режимы просмотра */
+#template-frame.desktop-view {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#template-frame.mobile-view {
+    width: 375px;
+    height: 667px;
+    border: 8px solid #2d3748;
+    border-radius: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+#template-frame.mobile-view::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 20px;
+    background: #2d3748;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    #sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        width: 280px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 2px 0 20px rgba(0,0,0,0.15);
+    }
+
+    #sidebar.open {
+        transform: translateX(0);
+    }
+
+    #toggle-sidebar {
+        display: block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 8px;
+        padding: 8px 12px;
+        font-size: 20px;
+        z-index: 1002;
+        position: relative;
+    }
+
+    .toolbar {
+        padding: 12px 15px;
+    }
+
+    .view-switcher {
+        display: none;
+    }
+
+    .lang-switcher select {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .iframe-container {
+        padding: 15px;
+    }
+
+    #template-frame.mobile-view {
+        width: 320px;
+        height: 568px;
+    }
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) and (min-width: 769px) {
+    #sidebar {
+        width: 220px;
+        min-width: 220px;
+    }
+    
+    .container {
+        overflow: hidden;
+    }
+    
+    #main-content {
+        width: calc(100% - 220px);
+    }
+}
+
+/* Поддержка RTL (справа налево) для иврита */
+[dir="rtl"] #sidebar {
+    box-shadow: -2px 0 15px rgba(0,0,0,0.1);
+}
+
+[dir="rtl"] .toolbar {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .view-switcher button, [dir="rtl"] .lang-switcher select {
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+[dir="rtl"] #template-list li {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+[dir="rtl"] #template-list span {
+    text-align: center;
+}
+
+[dir="rtl"] .contact-buttons {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .contact-btn {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+    [dir="rtl"] #sidebar {
+        right: 0;
+        left: auto;
+        transform: translateX(100%);
+        width: 280px;
+    }
+
+    [dir="rtl"] #sidebar.open {
+        transform: translateX(0);
+    }
+    
+    [dir="rtl"] #toggle-sidebar {
+        margin-left: 0;
+        margin-right: auto;
+    }
+    
+    [dir="rtl"] .contact-buttons {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 4px;
+        z-index: 10;
+    }
+    
+    [dir="rtl"] .contact-btn {
+        padding: 8px;
+        min-width: 40px;
+        justify-content: center;
+    }
+    
+    [dir="rtl"] .contact-btn .btn-text {
+        display: none; /* Скрываем текст на мобильных */
+    }
+    
+    [dir="rtl"] .contact-btn .btn-icon {
+        margin: 0; /* Убираем отступы для иконок */
+    }
+    
+    [dir="rtl"] .view-switcher {
+        display: none;
+    }
+    
+[dir="rtl"] .lang-switcher {
+        margin-right: 0; /* Убираем все отступы справа */
+        margin-left: 8px; /* Добавляем небольшой отступ слева */
+        order: 999; /* Явно помещаем элемент в конец строки */
+        display: block !important; /* Гарантируем отображение */
+        visibility: visible !important; /* Гарантируем видимость */
+    }
+    
+    /* Для мобильных устройств в RTL режиме */
+    @media (max-width: 768px) {
+        [dir="rtl"] .lang-switcher {
+            margin-right: 0; /* Убираем все отступы справа */
+            margin-left: 8px; /* Добавляем небольшой отступ слева */
+            order: 999; /* Явно помещаем элемент в конец строки */
+            display: block !important; /* Гарантируем отображение */
+            visibility: visible !important; /* Гарантируем видимость */
+        }
+    }
+}
