@@ -65,28 +65,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // Тексты интерфейса на разных языках
     const translations = {
         ru: {
-            title: "Просмотрщик шаблонов",
-            templates_title: "Шаблоны",
+            title: "VIP Шаблоны - Премиум шаблоны сайтов",
+            templates_title: "VIP Шаблоны",
             desktop_view: "Десктоп",
             mobile_view: "Мобильный",
             whatsapp_btn: "WhatsApp",
-            phone_btn: "Позвонить"
+            phone_btn: "Позвонить",
+            meta_description: "VIP Шаблоны - Профессиональные шаблоны сайтов для всех ваших нужд. Премиум качество шаблонов для бизнеса, e-commerce и личного использования.",
+            meta_keywords: "vip шаблоны, премиум шаблоны, шаблоны сайтов, бизнес шаблоны, e-commerce шаблоны, адаптивные шаблоны, html шаблоны, css шаблоны"
         },
         en: {
-            title: "Template Viewer",
-            templates_title: "Templates",
+            title: "VIP Templates - Premium Website Templates",
+            templates_title: "VIP Templates",
             desktop_view: "Desktop",
             mobile_view: "Mobile",
             whatsapp_btn: "WhatsApp",
-            phone_btn: "Call"
+            phone_btn: "Call",
+            meta_description: "VIP Templates - Professional website templates for all your needs. Premium quality templates for business, e-commerce, and personal use.",
+            meta_keywords: "vip templates, premium templates, website templates, business templates, e-commerce templates, responsive templates, html templates, css templates"
         },
         he: {
-            title: "מציג תבניות",
-            templates_title: "תבניות",
+            title: "תבניות VIP - תבניות אתרים פרימיום",
+            templates_title: "תבניות VIP",
             desktop_view: "שולחן עבודה",
             mobile_view: "נייד",
             whatsapp_btn: "וואטסאפ",
-            phone_btn: "התקשרו"
+            phone_btn: "התקשרו",
+            meta_description: "תבניות VIP - תבניות אתרים מקצועיות לכל הצרכים שלך. תבניות איכותיות לעסקים, e-commerce ושימוש אישי.",
+            meta_keywords: "תבניות VIP, תבניות פרימיום, תבניות אתרים, תבניות עסקיות, תבניות e-commerce, תבניות תגובתיות, תבניות html, תבניות css"
         }
     };
 
@@ -107,9 +113,119 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.textContent = translations[lang][key];
             }
         });
+        
+        // Обновляем язык и направление текста
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+        
+        // Обновляем мета-теги для SEO
+        updateMetaTags(lang);
+        
+        // Обновляем структурированные данные
+        updateStructuredData(lang);
+        
         populateTemplateList(lang);
+    }
+    
+    // Функция обновления мета-тегов
+    function updateMetaTags(lang) {
+        if (translations[lang] && translations[lang].title) {
+            // Обновляем title
+            document.title = translations[lang].title;
+            
+            // Обновляем мета-тег description
+            let metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription) {
+                metaDescription.setAttribute('content', translations[lang].meta_description);
+            }
+            
+            // Обновляем мета-тег keywords
+            let metaKeywords = document.querySelector('meta[name="keywords"]');
+            if (metaKeywords) {
+                metaKeywords.setAttribute('content', translations[lang].meta_keywords);
+            }
+            
+            // Обновляем Open Graph теги
+            let ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) {
+                ogTitle.setAttribute('content', translations[lang].title);
+            }
+            
+            let ogDescription = document.querySelector('meta[property="og:description"]');
+            if (ogDescription) {
+                ogDescription.setAttribute('content', translations[lang].meta_description);
+            }
+            
+            // Обновляем Twitter Card теги
+            let twitterTitle = document.querySelector('meta[name="twitter:title"]');
+            if (twitterTitle) {
+                twitterTitle.setAttribute('content', translations[lang].title);
+            }
+            
+            let twitterDescription = document.querySelector('meta[name="twitter:description"]');
+            if (twitterDescription) {
+                twitterDescription.setAttribute('content', translations[lang].meta_description);
+            }
+            
+            // Обновляем canonical URL
+            let canonicalLink = document.querySelector('link[rel="canonical"]');
+            if (canonicalLink) {
+                let baseUrl = 'https://viptemplates.onrender.com/';
+                if (lang !== 'en') {
+                    baseUrl += '?lang=' + lang;
+                }
+                canonicalLink.setAttribute('href', baseUrl);
+            }
+            
+            // Обновляем alternate теги
+            updateAlternateLinks(lang);
+        }
+    }
+    
+    // Функция обновления alternate ссылок
+    function updateAlternateLinks(currentLang) {
+        const baseUrl = 'https://viptemplates.onrender.com/';
+        const links = {
+            'en': baseUrl,
+            'ru': baseUrl + '?lang=ru',
+            'he': baseUrl + '?lang=he'
+        };
+        
+        // Удаляем старые alternate ссылки
+        document.querySelectorAll('link[rel="alternate"]').forEach(link => {
+            if (link.getAttribute('hreflang')) {
+                link.remove();
+            }
+        });
+        
+        // Добавляем новые alternate ссылки
+        Object.keys(links).forEach(lang => {
+            const link = document.createElement('link');
+            link.rel = 'alternate';
+            link.hreflang = lang;
+            link.href = links[lang];
+            document.head.appendChild(link);
+        });
+    }
+    
+    // Функция обновления структурированных данных
+    function updateStructuredData(lang) {
+        let script = document.querySelector('script[type="application/ld+json"]');
+        if (script) {
+            try {
+                let data = JSON.parse(script.textContent);
+                data.inLanguage = [lang];
+                
+                // Обновляем название для текущего языка
+                if (translations[lang] && translations[lang].title) {
+                    data.name = translations[lang].title.split(' - ')[0];
+                }
+                
+                script.textContent = JSON.stringify(data, null, 2);
+            } catch (e) {
+                console.error('Error updating structured data:', e);
+            }
+        }
     }
 
     // Функция для заполнения списка шаблонов

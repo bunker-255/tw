@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- Главная страница на разных языках -->
+    <url>
+        <loc>https://viptemplates.onrender.com/</loc>
+        <lastmod>2025-09-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://viptemplates.onrender.com/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://viptemplates.onrender.com/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="he" href="https://viptemplates.onrender.com/?lang=he" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://viptemplates.onrender.com/" />
+    </url>
+    
+    <!-- Шаблоны на разных языках -->
+    <!-- Template 1 -->
+    <url>
+        <loc>https://viptemplates.onrender.com/one_page_apps/template1/index.html</loc>
+        <lastmod>2025-09-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://viptemplates.onrender.com/one_page_apps/template1/index.html" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://viptemplates.onrender.com/one_page_apps/template1/index.html?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="he" href="https://viptemplates.onrender.com/one_page_apps/template1/index.html?lang=he" />
+    </url>
+    
+    <!-- Template 2 -->
+    <url>
+        <loc>https://viptemplates.onrender.com/one_page_apps/template2/index.html</loc>
+        <lastmod>2025-09-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://viptemplates.onrender.com/one_page_apps/template2/index.html" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://viptemplates.onrender.com/one_page_apps/template2/index.html?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="he" href="https://viptemplates.onrender.com/one_page_apps/template2/index.html?lang=he" />
+    </url>
+    
+    <!-- Template 3 -->
+    <url>
+        <loc>https://viptemplates.onrender.com/one_page_apps/template3/index.html</loc>
+        <lastmod>2025-09-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://viptemplates.onrender.com/one_page_apps/template3/index.html" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://viptemplates.onrender.com/one_page_apps/template3/index.html?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="he" href="https://viptemplates.onrender.com/one_page_apps/template3/index.html?lang=he" />
+    </url>
+    
+    <!-- Template 4 -->
+    <url>
+        <loc>https://viptemplates.onrender.com/one_page_apps/template4/index.html</loc>
+        <lastmod>2025-09-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://viptemplates.onrender.com/one_page_apps/template4/index.html" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://viptemplates.onrender.com/one_page_apps/template4/index.html?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="he" href="https://viptemplates.onrender.com/one_page_apps/template4/index.html?lang=he" />
+    </url>
+    
+    <!-- Template 5 -->
+    <url>
+        <loc>https://viptemplates.onrender.com/one_page_apps/template5/index.html</loc>
+        <lastmod>2025-09-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://viptemplates.onrender.com/one_page_apps/template5/index.html" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://viptemplates.onrender.com/one_page_apps/template5/index.html?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="he" href="https://viptemplates.onrender.com/one_page_apps/template5/index.html?lang=he" />
+    </url>
+    
+    <!-- Template 6 -->
+    <url>
+        <loc>https://viptemplates.onrender.com/one_page_apps/template6/index.html</loc>
+        <lastmod>2025-09-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://viptemplates.onrender.com/one_page_apps/template6/index.html" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://viptemplates.onrender.com/one_page_apps/template6/index.html?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="he" href="https://viptemplates.onrender.com/one_page_apps/template6/index.html?lang=he" />
+    </url>
+</urlset>
