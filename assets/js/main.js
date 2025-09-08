@@ -50,6 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             path: 'one_page_apps/template5/index.html',
             preview: 'one_page_apps/template5/preview.png'
+        },
+        {
+            name: {
+                ru: 'ModernShop',
+                en: 'ModernShop',
+                he: 'ModernShop'
+            },
+            path: 'one_page_apps/template6/index.html',
+            preview: 'one_page_apps/template6/preview.png'
         }
     ];
 
